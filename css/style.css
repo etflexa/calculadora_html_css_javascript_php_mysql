@@ -1,0 +1,95 @@
+*{
+	margin:0;
+	padding: 0;
+	background: #ccc;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+.button{
+	width: 50px;
+	height: 50px;
+	font-size:25px; 
+	margin:2px;
+	cursor: pointer;
+	border-radius: 10px;
+	background: #607d8b;
+	color: white;
+}
+
+.textview{
+	width: 205px;
+	margin:5px;
+	font-size: 25px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.textview:focus{
+	transition: 1s;
+	background: rgb(214, 150, 93);
+}
+
+.textview-title{
+	width: 205px;
+	margin:5px;
+	font-size: 25px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.textview-title:focus{
+	transition: 1s;
+	background: rgb(214, 150, 93);
+}
+
+
+
+
+.main{
+	position:absolute;
+	top: 50%;
+	left: 18%;
+	transform:translateX(-50%) translateY(-50%);
+}
+
+.view-information{
+	width: 400px;
+	height: 450px;
+	background: white;
+	display: inline-block;
+	margin-left: 600px;
+	margin-top:10px;
+	border-radius: 10px;
+
+
+}
+
+.view-information h2{
+	border-radius: 10px;
+	text-align: center;
+	padding-bottom: -10px;
+	margin-top: 10px;
+}
+
+.save-button input[type=button]{
+	margin-left: 145px;
+	margin-top: 60px;
+	margin-bottom: 10px;
+	display: inline-block;
+	background-color: #12FA29;
+	text-decoration-color: white;
+	width: 100px;
+	height: 40px;
+	border-radius: 10px; 
+	color: white;
+	transition: 1s;
+}
+
+.save-button input[type=button]:hover{
+	background-color: rgb(214, 150, 93);
+}
+
+
+
