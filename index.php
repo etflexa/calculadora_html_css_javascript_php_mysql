@@ -1,3 +1,7 @@
+<?php
+	$pdo = new PDO('mysql:host=localhost;dbname=calculadora_db','root','');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +11,32 @@
 	<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0'>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="js/main.js"></script>
+	<title></title>
 </head>
 <body>
+	<div class="left">
 		<div class="main">
 
-			<form method="post" name="form-title">
-				<input class="textview-title" name="textview-title" placeholder="Título da conta">
-			</form>
-			
 			<form method="post" name="form">
-				<input class="textview" name="textview">
-			</form>
 
-			
+				<?php
+
+					if(isset($_POST['acao'])){
+							$titulo = $_POST['titulo'];
+							$conta = $_POST['conta'];
+							$sql = $pdo->prepare("INSERT INTO `contas` VALUES (null,?,?)");
+							$sql->execute(array($titulo,$conta));
+						}
+
+				?>
+
+
+				<div class="save-button">
+					<input type="submit" name="acao" value="Salvar Conta">
+				</div>
+				<input type="text" class="textview" name="titulo" placeholder="Título da conta" required>
+				<input type="text" class="textview" name="conta" required>
+			</form>
 
 			<table>
 
@@ -60,15 +77,15 @@
 			</table>
 			
 		</div>
+	</div>
 
-		
-
+	<div class="right">
 		<div class="view-information">
-
-			<div class="save-button">
-			<input type="button" name="save-button" value="Salvar Conta">
-		</div>
 				<h2>Valores Salvos:</h2>
+				<div class="view">
+					
+				</div>
 			</div>
+	</div>
 </body>
 </html>

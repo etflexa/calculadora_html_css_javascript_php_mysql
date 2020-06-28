@@ -1,19 +1,19 @@
 function insert(num){
-	document.form.textview.value= document.form.textview.value+num
+	document.form.conta.value= document.form.conta.value+num
 }
 
 function equal(){
-	var exp = document.form.textview.value;
+	var exp = document.form.conta.value;
 	if(exp){
-		document.form.textview.value=eval(exp);
+		document.form.conta.value=eval(exp);
 	}
 }
 
 function clean(){
-	document.form.textview.value ="";
+	document.form.conta.value ="";
 }
 
 function back(){
-	var exp = document.form.textview.value;
-	document.form.textview.value=exp.substring(0,exp.length-1);
+	var exp = document.form.conta.value;
+	document.form.conta.value=exp.substring(0,exp.length-1);
 }
