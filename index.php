@@ -83,7 +83,34 @@
 		<div class="view-information">
 				<h2>Valores Salvos:</h2>
 				<div class="view">
-					
+					<?php
+
+						if(isset($_GET['excluir'])) {
+							$id = (int)$_GET['excluir'];
+							$pdo->exec("DELETE FROM `contas` WHERE id = $id");
+							
+						}
+
+						$info = $pdo->prepare("SELECT * FROM `contas`");
+						$info->execute();
+						$info = $info->fetchAll();
+						foreach ($info as $key => $value) {
+
+					?>
+
+					<div class="box-visualization">
+						<div class="box-single-wrapper">
+							<b>Título da Conta:</b> <?php echo $value['titulo']; ?><br>
+							<b>Valor:</b> R$ <?php echo $value['conta']; ?><br>
+							<a href="?excluir=<?php echo $value['id']; ?>">Apagar Conta</a>
+							
+							
+						</div>
+				
+			</div>
+
+			<?php } ?>
+			<div class="clear"></div>
 				</div>
 			</div>
 	</div>
